@@ -13,8 +13,8 @@ cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';
 #Get dataagit
 df = pd.read_sql(
                 #Chose colum and Select DB which is excuted some conditions to excerpt data. 
-                '''SELECT TOP 150000 DATE_WRONG,DDI,CallingNumber,Passcode\
-                FROM AntiFraud.dbo.ConferenceWrongAttempt where CallingNumber not like '+81%' '''
+                '''SELECT TOP 150000 Date,Number,Code,Pass\
+                FROM AttackPass.Attempt where NumberList not like '+31%' '''
                 #Connect SQL
                 ,cnxn
                 )
