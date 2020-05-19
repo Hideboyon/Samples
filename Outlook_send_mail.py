@@ -1,7 +1,5 @@
 import smtplib
-from win32com.client import Dispatch
 from email.message import EmailMessage
-
 
 #メールのパラメータ入力
 #Enter SMTP Paramater 
@@ -11,7 +9,6 @@ password = "xxxxxx"
 message['From'] = 'x.xxxxxx@xxxxx.com'
 message['To'] = 'x.xxxxxx@xxxxx.com'
 message['Subject'] = xxxxx
-
 
 #SMTP処理
 #SMTP process
