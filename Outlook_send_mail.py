@@ -1,5 +1,5 @@
 import smtplib
-from email.message import EmailMessage
+from emailmessage import EmailMessage
 
 #メールのパラメータ入力
 #Enter SMTP Paramater 
