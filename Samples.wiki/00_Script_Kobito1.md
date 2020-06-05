@@ -1,4 +1,0 @@
-# Motivation
-
-# About script flow
-
