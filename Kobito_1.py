@@ -3,7 +3,6 @@ from win32com.client import Dispatch
 import pandas as pd
 import smtplib
 from email.message import EmailMessage
-import randome
 
 # 添付フォイルを保存するパス。
 save_path = r'C:\Users\xxxxxxx\Desktop'
