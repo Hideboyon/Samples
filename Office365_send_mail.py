@@ -1,11 +1,14 @@
 import smtplib
-from emailmessage import EmailMessage
+from email.message import EmailMessage
 
 #メールのパラメータ入力
 #Enter SMTP Paramater 
 smtp = smtplib.SMTP('smtp.office365.com',587)
 user = 'x.xxxxxx@xxxx.com'
 password = "xxxxxx"
+
+
+message = message.EmailMessage()
 message['From'] = 'x.xxxxxx@xxxxx.com'
 message['To'] = 'x.xxxxxx@xxxxx.com'
 message['Subject'] = xxxxx
