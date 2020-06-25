@@ -1,18 +1,24 @@
+# import and define modules.
+# モジュールのインポート 
 import datetime as date
 from win32com.client import Dispatch
 import pandas as pd
 import smtplib
 from email.message import EmailMessage
 
+# Define an attached file path. 
 # 添付フォイルを保存するパス。
 save_path = r'C:\Users\xxxxxxx\Desktop'
 
+# Existing mail of the subuject which has an attached file.
 # ファイルが添付されているメールタイトル
 sub_ = 'Daily Data Report'
 
+# Name of the attahced file.
 # 添付ファイルの名前
 att_ = 'data.xlsx'
 
+# Define a variable for today's email.
 # 当日のメール参照用変数
 lag = 0
 
