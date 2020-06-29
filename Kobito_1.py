@@ -22,29 +22,36 @@ att_ = 'data.xlsx'
 # 当日のメール参照用変数
 lag = 0
 
+# Access to mailbox of outlook.
 # 自分のメールボックスへアクセスする
 outlook = Dispatch("Outlook.Application").GetNamespace("MAPI")
 
+# Define cheking folder. In this case which name is "Data_Folder". 
 # 見に行くフォルダーを指定。"Data_Folder"
 inbox = outlook.GetDefaultfolder(6).Folders.Item("Data_Folder")
 all_inbox = inbox.Items
 
+# Get a date of the latest email.
 # メールの最新日時を取得
 Val_date = (date.date.today() - date.timedelta(lag)).strftime("%d/%m/%y")
 print(Val_date)
 
+# Search email of the target.
 # 条件文で該当のメールを探す処理
 for msg in all_inbox:
     if sub_ in msg.Subject:
        for att in msg.Attachments:
             if att_ in att.FileName:
+                # Add file name then for the PATH of the save file.
                 # ファイル名を追加して最初に指定した保存用パス、それに任意のファイル名前を追加
                 att.SaveAsFile(save_path + '\\Today_data.xlsx') 
 
-#メール送信用のテキストファイルのパス指定
+# Define the PATH for contents of sending email.
+# メール送信用のテキストファイルのパス指定
 path = 'C:/Users/xxxxxxx/Desktop/report.txt'
 
-#dataフレームの抽出・加工処理
+# Processing data frame.
+# dataフレームの抽出・加工処理
 df = pd.read_excel('C:/Users/xxxxxxx/Desktop/data.xlsx')
 df.columns= [str(s).replace(' ','_') for s in df.columns] #query メソッドでindex（列名）読み込めるように列の文字列にある空白は＿に変換
 df['Group'].fillna('NA', inplace=True) #query　メソッドで読み込めるようにNaNがある場合は、NA文字に置き換える処理にした
@@ -55,12 +62,13 @@ df2 = df[df['Score']<=3.0]#スコアが、3.0以下のデータを抽出
 df3 = df[df['Score'].isnull()]#スコアに欠損値（空データ）がある場合、該当する行を抽出
 
 
-#日付関連の処理
+# Processing for a related date.
+# 日付関連の処理
 dt = date.date.today()
 dts = dt.strftime('[%Y-%m-%d]')
 
-
-#メールに記載する文字列の処理
+# Create mail contents.
+# メールに記載する文字列の処理
 s = 'みなさん、お疲れ様です。\
 \n毎朝10時10分に自動でファイルを取得\
 \nデータを整形し配信しております。\
@@ -75,7 +83,8 @@ s4 = '\n\n完全自動化されました。ただしぼくのPCが起動中の�
 
 h = '\nScore	Group	Number    Type 	Car\n'
 
-#メールの表題に記載する文字列の処理
+# Create mail subject content.
+# メールの表題に記載する文字列の処理.
 sub = 'daily check'
 subs = dts+sub
 
