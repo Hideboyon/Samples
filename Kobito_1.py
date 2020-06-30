@@ -24,6 +24,7 @@ lag = 0
 
 # Access to mailbox of outlook.
 # 自分のメールボックスへアクセスする
+# hogehogehogehoge
 outlook = Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 # Define cheking folder. In this case which name is "Data_Folder". 
