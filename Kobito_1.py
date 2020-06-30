@@ -23,6 +23,7 @@ att_ = 'data.xlsx'
 lag = 0
 
 # 自分のメールボックスへアクセスする
+# hogehogehogehoge
 outlook = Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 # 見に行くフォルダーを指定。"Data_Folder"
