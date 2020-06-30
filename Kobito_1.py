@@ -1,5 +1,5 @@
 # import and define modules.
-# モジュールのインポート 
+# モジュールのインポート hoge2
 import datetime as date
 from win32com.client import Dispatch
 import pandas as pd
@@ -24,7 +24,6 @@ lag = 0
 
 # Access to mailbox of outlook.
 # 自分のメールボックスへアクセスする
-# hogehogehogehoge
 outlook = Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 # Define cheking folder. In this case which name is "Data_Folder". 
