@@ -1,5 +1,5 @@
 # import and define modules.
-# モジュールのインポート hoge1
+# モジュールのインポート hoge2
 import datetime as date
 from win32com.client import Dispatch
 import pandas as pd
