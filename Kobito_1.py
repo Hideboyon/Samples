@@ -1,5 +1,6 @@
 #import and define modules.
 #モジュールのインポート
+# コンフリクトテストな。
 import datetime as date
 from win32com.client import Dispatch
 import pandas as pd
