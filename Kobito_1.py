@@ -1,6 +1,7 @@
-# import and define modules.
-# モジュールのインポート
-# dv　で追加した文字列　コンフリクト発生用
+#import and define modules.
+#モジュールのインポート
+# コンフリクトテストな。
+# DV側でコンフリクト発生させる。
 import datetime as date
 from win32com.client import Dispatch
 import pandas as pd
