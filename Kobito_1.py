@@ -88,6 +88,7 @@ h = '\nScore	Group	Number    Type 	Car\n'
 sub = 'daily check'
 subs = dts+sub
 
+# Add text in contents of email.
 #メール本文に記載していく処理
 with open(path,mode='w',encoding="utf-8") as fp:
     fp.write(s)
@@ -107,7 +108,8 @@ with open(path,mode='r',encoding="utf-8") as fp: #pathをreadモードで読み�
     message.set_content(fp.read())
 
 
-#メール処理関連
+# SMTP process.
+# メール処理関連
 smtp = smtplib.SMTP('smtp.office365.com',587)
 user = 'xxxxxxx@xxxxxx.com'
 password = "xxxxxxxxxxxxxx"
@@ -115,8 +117,6 @@ message['From'] = 'xxxxxxx@xxxxxx.com'
 message['To'] = 'xxxxxxxxxxx@xxxxxx.com'
 message['Subject'] = subs
 
-
-#SMTP処理
 smtp.ehlo()
 smtp.starttls()
 smtp.ehlo()
